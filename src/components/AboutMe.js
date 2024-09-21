@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Flex, Circle, Stack, VStack, useBreakpointValue, Container } from '@chakra-ui/react';
+import { Box, Text, Flex, Circle, VStack, useBreakpointValue, Container } from '@chakra-ui/react';
 import { FaUserTie, FaGraduationCap } from 'react-icons/fa';
 
 const timelineItems = [
