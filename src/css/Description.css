@@ -1,0 +1,22 @@
+/* src/cssh/Description.css */
+
+@keyframes rollIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .rolling-text {
+    display: inline-block;
+    animation: rollIn 1.5s ease-in-out forwards;
+  }
+  

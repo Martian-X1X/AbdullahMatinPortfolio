@@ -1,0 +1,56 @@
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.group:hover .card-container {
+  transform: rotateY(180deg);
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .card-container {
+    height: 300px; /* Adjust based on content */
+  }
+
+
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .card-container {
+    height: 300px; /* Adjust height for medium screens */
+  }
+
+
+}
+
+@media (min-width: 769px) {
+  .card-container {
+    height: 350px; /* Adjust height for larger screens */
+  }
+
+  
+}
