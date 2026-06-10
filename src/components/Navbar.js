@@ -1,115 +1,116 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import AMlogo from '../assets/AMlogo.png';
 
-const Navbar = () => {
+const Navbar = ({ isDark, toggleDark }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 20);
     };
-
-    document.addEventListener('scroll', handleScroll);
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
-    { name: 'HOME', id: 'home' },
-    { name: 'SKILLS', id: 'skill' },
-    { name: 'PROJECTS', id: 'project' },
-    { name: 'EXPERIENCE', id: 'experience' },
-    { name: 'ABOUT ME', id: 'about' },
-    { name: 'CONTACT', id: 'contact' }
+    { name: 'Home', id: 'home' },
+    { name: 'Skills', id: 'skill' },
+    { name: 'Projects', id: 'project' },
+    { name: 'Experience', id: 'experience' },
+    { name: 'About', id: 'about' },
+    { name: 'Contact', id: 'contact' },
   ];
 
   return (
-    <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'bg-deep-black shadow-md' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex items-center">
-            <img src={AMlogo} alt="Logo" className="w-16 h-auto sm:w-20" />
-          </div>
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-card/80 backdrop-blur-lg shadow-sm border-b border-border'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          <a href="#home" className="flex items-center gap-3 group">
+            <img src={AMlogo} alt="AM" className="w-10 h-10 rounded-lg transition-transform duration-300 group-hover:scale-105" />
+            <span className="text-lg font-semibold text-primary-text hidden sm:block">
+              Abdullah Matin
+            </span>
+          </a>
 
-          <div className="hidden md:flex space-x-2 lg:space-x-4">
+          <div className="hidden md:flex items-center gap-1">
             {menuItems.map((item) => (
-              <a 
+              <a
                 key={item.id}
-                href={`#${item.id}`} 
-                className={`text-sm lg:text-base font-bold hover:text-red-600 transition-colors ${scrolled ? 'text-violet-600' : 'text-red-700'}`}
+                href={`#${item.id}`}
+                className="px-4 py-2 text-sm font-medium text-secondary-text hover:text-accent transition-colors duration-200 rounded-lg hover:bg-accent-light/50"
               >
-                {`</${item.name}>`}
+                {item.name}
               </a>
             ))}
-          </div>
-
-          <div className="hidden md:flex">
-            <a 
-              href="https://www.fiverr.com/abdullah_matin1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-red-700 text-white px-4 py-2 rounded-md font-bold hover:bg-red-600 transition-colors text-sm lg:text-base"
+            <button
+              onClick={toggleDark}
+              className="ml-2 p-2.5 rounded-xl text-secondary-text hover:text-accent hover:bg-accent-light/50 transition-all duration-200"
+              aria-label="Toggle dark mode"
             >
-              Hire now
+              {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
+            </button>
+            <a
+              href="https://www.fiverr.com/abdullah_matin1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-5 py-2.5 text-sm font-semibold text-white bg-accent hover:bg-accent-dark rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+            >
+              Hire Me
             </a>
           </div>
 
-          <div className="md:hidden">
-            <button 
-              onClick={toggleMenu} 
-              className={`text-2xl p-2 rounded-md ${scrolled ? 'text-gray-800' : 'text-red-700'} hover:bg-gray-100 transition-colors`}
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleDark}
+              className="p-2.5 rounded-xl text-secondary-text hover:text-accent hover:bg-accent-light/50 transition-all duration-200"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-xl text-secondary-text hover:bg-accent-light/50 transition-colors"
               aria-label="Toggle menu"
             >
-              <FaBars />
+              {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div 
-        className={`fixed inset-0 bg-white z-50 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}
+      <div
+        className={`fixed inset-0 bg-card/95 backdrop-blur-lg z-40 transform ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } transition-transform duration-300 ease-in-out md:hidden`}
       >
-        <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center p-4 border-b">
-            <img src={AMlogo} alt="Logo" className="w-16 h-auto" />
-            <button 
-              onClick={toggleMenu}
-              className="text-2xl p-2 rounded-md text-gray-800 hover:bg-gray-100 transition-colors"
-              aria-label="Close menu"
+        <div className="flex flex-col items-center justify-center h-full gap-8">
+          {menuItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="text-2xl font-medium text-primary-text hover:text-accent transition-colors"
+              onClick={() => setIsOpen(false)}
             >
-              ✕
-            </button>
-          </div>
-          <div className="flex flex-col items-center justify-center flex-grow">
-            {menuItems.map((item) => (
-              <a 
-                key={item.id}
-                href={`#${item.id}`} 
-                className="text-gray-800 text-xl font-bold my-4 hover:text-red-600 transition-colors"
-                onClick={toggleMenu}
-              >
-                {`</${item.name}>`}
-              </a>
-            ))}
-            <a 
-              href="https://www.fiverr.com/abdullah_matin1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mt-6 bg-red-700 text-white px-6 py-3 rounded-md font-bold hover:bg-red-600 transition-colors"
-              onClick={toggleMenu}
-            >
-              Hire now
+              {item.name}
             </a>
-          </div>
+          ))}
+          <a
+            href="https://www.fiverr.com/abdullah_matin1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 px-8 py-3 text-base font-semibold text-white bg-accent hover:bg-accent-dark rounded-xl transition-all duration-200 shadow-md"
+            onClick={() => setIsOpen(false)}
+          >
+            Hire Me
+          </a>
         </div>
       </div>
     </nav>

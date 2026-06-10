@@ -1,33 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
-    './src/**/*.{js,jsx,ts,tsx}', // Adjust paths based on your project structure
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        'deep-black': '#0A0A0A',
-        'vibrant-purple': '#6C3CE8',
-        'electric-blue': '#00C2FF',
-        'neon-green': '#39FF14',
-        'hot-pink': '#FF1493',
-        'off-white': '#F5F5F5',
-        'charcoal-gray': '#333333',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        card: 'rgb(var(--color-card) / <alpha-value>)',
+        'primary-text': 'rgb(var(--color-primary-text) / <alpha-value>)',
+        'secondary-text': 'rgb(var(--color-secondary-text) / <alpha-value>)',
+        'muted-text': 'rgb(var(--color-muted-text) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-dark': 'rgb(var(--color-accent-dark) / <alpha-value>)',
+        'accent-light': 'rgb(var(--color-accent-light) / <alpha-value>)',
+        border: 'rgb(var(--color-border) / <alpha-value>)',
       },
-      perspective: {
-        '1000': '1000px',
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
-      rotate: {
-        'y-180': 'rotateY(180deg)',
+      animation: {
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'slide-up': 'slideUp 0.6s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
       },
-      transformStyle: {
-        'preserve-3d': 'preserve-3d',
-      },
-      backfaceVisibility: {
-        'hidden': 'hidden',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
     },
   },

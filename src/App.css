@@ -2,37 +2,62 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold text-primary-text;
+  letter-spacing: -0.02em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-subtitle {
+  @apply text-secondary-text text-lg md:text-xl mt-2 max-w-2xl;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+  @apply bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
+.gradient-text {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366F1, #8B5CF6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.gradient-border:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
 }

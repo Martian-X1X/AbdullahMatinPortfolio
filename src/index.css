@@ -2,21 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --color-surface: 250 250 249;
+    --color-card: 255 255 255;
+    --color-primary-text: 28 25 23;
+    --color-secondary-text: 120 113 108;
+    --color-muted-text: 168 162 158;
+    --color-accent: 99 102 241;
+    --color-accent-dark: 79 70 229;
+    --color-accent-light: 238 242 255;
+    --color-border: 231 229 228;
+  }
+
+  .dark {
+    --color-surface: 10 10 10;
+    --color-card: 26 26 26;
+    --color-primary-text: 250 250 249;
+    --color-secondary-text: 168 162 158;
+    --color-muted-text: 120 113 108;
+    --color-accent: 99 102 241;
+    --color-accent-dark: 79 70 229;
+    --color-accent-light: 99 102 241 0.15;
+    --color-border: 39 39 42;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-primary-text));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::selection {
+  background-color: rgb(var(--color-accent));
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-surface));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-muted-text));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-secondary-text));
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(63 63 70);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(82 82 91);
 }
