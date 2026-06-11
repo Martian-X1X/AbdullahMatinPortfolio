@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
- "homepage": "https://martian-x1x.github.io/AbdullahMatinPortfolio",
+  "homepage": "https://martian-x1x.github.io/AbdullahMatinPortfolio",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
