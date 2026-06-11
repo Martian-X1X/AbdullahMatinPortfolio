@@ -4,6 +4,14 @@ import { FaBriefcase, FaCode } from 'react-icons/fa';
 
 const timelineData = [
   {
+    title: 'Geniune Technology and Research',
+    subtitle: 'Jr. Software Programmer',
+    date: 'Oct 2024 - Present',
+    description:
+      'Developed HRM software, ERP, OKR, and CRM systems. Optimized attendance procedure to process thousands of employees within seconds, improving efficiency by 80%. Tech stack: ASP.NET, JavaScript, PostgreSQL.',
+    icon: FaBriefcase,
+  },
+  {
     title: 'SystemSage Solutions Sdn Bhd',
     subtitle: 'Software Developer Intern (Remote)',
     date: 'Jan 2024 - June 2024',

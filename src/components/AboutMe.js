@@ -4,10 +4,10 @@ import { FaUserTie, FaGraduationCap } from 'react-icons/fa';
 
 const timelineItems = [
   {
-    icon: FaUserTie,
-    title: 'Islamia English School, Abu Dhabi, UAE',
-    subtitle: 'O-Level - 2015',
-    description: 'Mathematics, Physics, Chemistry, Biology, ICT, Islamiyat, English, Bangla',
+    icon: FaGraduationCap,
+    title: 'Independent University, Bangladesh',
+    subtitle: 'BSc in Computer Science Engineering - 2019-2024',
+    description: 'Algorithms, Data Structures, OOP, Machine Learning, AI',
   },
   {
     icon: FaUserTie,
@@ -16,10 +16,10 @@ const timelineItems = [
     description: 'Mathematics, Physics, Chemistry',
   },
   {
-    icon: FaGraduationCap,
-    title: 'Independent University, Bangladesh',
-    subtitle: 'BSc in Computer Science Engineering - 2019-2024',
-    description: 'Algorithms, Data Structures, OOP, Machine Learning, AI',
+    icon: FaUserTie,
+    title: 'Islamia English School, Abu Dhabi, UAE',
+    subtitle: 'O-Level - 2015',
+    description: 'Mathematics, Physics, Chemistry, Biology, ICT, Islamiyat, English, Bangla',
   },
 ];
 

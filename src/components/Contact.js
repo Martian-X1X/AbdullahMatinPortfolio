@@ -11,7 +11,7 @@ const Contact = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-primary-text text-white">
+    <footer id="contact" className="bg-primary-text text-white dark:bg-card dark:text-primary-text">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.div
           className="text-center mb-12"
@@ -44,10 +44,10 @@ const Contact = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { transition: { staggerChildren: 0.1 } },
-            }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+              }}
           >
             {socialLinks.map((link, index) => {
               const Icon = link.icon;
@@ -62,7 +62,7 @@ const Contact = () => {
                     visible: { opacity: 1, y: 0 },
                   }}
                   whileHover={{ y: -4, scale: 1.05 }}
-                  className="w-14 h-14 rounded-xl bg-white/10 hover:bg-accent flex items-center justify-center text-white hover:text-white transition-colors duration-200"
+                  className="w-14 h-14 rounded-xl bg-white/20 hover:bg-accent dark:bg-white/10 dark:hover:bg-accent flex items-center justify-center text-white hover:text-white transition-colors duration-200"
                   aria-label={link.label}
                 >
                   <Icon size={20} />
@@ -71,7 +71,7 @@ const Contact = () => {
             })}
           </motion.div>
 
-          <div className="space-y-3 text-left">
+            <div className="space-y-3 text-left">
             <motion.div
               className="flex items-center gap-3"
               initial={{ opacity: 0, x: -10 }}

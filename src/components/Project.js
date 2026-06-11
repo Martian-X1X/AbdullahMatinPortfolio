@@ -4,8 +4,16 @@ import { FaArrowRight } from 'react-icons/fa';
 import cardImage1 from '../assets/landingpage.png';
 import cardImage2 from '../assets/system.png';
 import cardImage3 from '../assets/food.png';
+import haldaPortfolio from '../assets/Halda Portfolio.png';
 
 const projects = [
+  {
+    title: 'Halda Portfolio - HRM Software',
+    image: haldaPortfolio,
+    tags: ['.NET', 'JavaScript', 'PostgreSQL'],
+    description:
+      'A comprehensive HRM system handling the full employee lifecycle from Pre-Onboarding to Offboarding. Features efficient attendance processing and salary management.',
+  },
   {
     title: 'Landing Page Design (e-commerce)',
     image: cardImage1,
@@ -80,7 +88,7 @@ const Project = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-56 object-contain bg-gray-100 dark:bg-gray-800 transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
