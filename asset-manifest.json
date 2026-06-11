@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/AbdullahMatinPortfolio/static/css/main.5dfc606b.css",
+    "main.js": "/AbdullahMatinPortfolio/static/js/main.d442b82b.js",
+    "static/js/453.1407b060.chunk.js": "/AbdullahMatinPortfolio/static/js/453.1407b060.chunk.js",
+    "static/media/Headshot.png": "/AbdullahMatinPortfolio/static/media/Headshot.31fd072a516914ecd784.png",
+    "static/media/food.png": "/AbdullahMatinPortfolio/static/media/food.06279997418daf5e634c.png",
+    "static/media/Halda Portfolio.png": "/AbdullahMatinPortfolio/static/media/Halda Portfolio.8ca4bf43ae3328b20be1.png",
+    "static/media/landingpage.png": "/AbdullahMatinPortfolio/static/media/landingpage.bfc72022fab7529f005e.png",
+    "static/media/system.png": "/AbdullahMatinPortfolio/static/media/system.d3c3f4e28d169c9f967f.png",
+    "static/media/sql.png": "/AbdullahMatinPortfolio/static/media/sql.6f7989a408e354c9ac8a.png",
+    "static/media/postgresql.png": "/AbdullahMatinPortfolio/static/media/postgresql.ddd4234c7535ce08da94.png",
+    "static/media/AMlogo.png": "/AbdullahMatinPortfolio/static/media/AMlogo.adceb4c52cffda377d06.png",
+    "static/media/html-css.png": "/AbdullahMatinPortfolio/static/media/html-css.8a36c700cef821aab320.png",
+    "static/media/tailwind.png": "/AbdullahMatinPortfolio/static/media/tailwind.38db3e132d10db13305f.png",
+    "static/media/Ts.png": "/AbdullahMatinPortfolio/static/media/Ts.c251f7fedb0c663e2910.png",
+    "static/media/mongodb.png": "/AbdullahMatinPortfolio/static/media/mongodb.79ff5334e43dcc2d40bd.png",
+    "static/media/js.png": "/AbdullahMatinPortfolio/static/media/js.af479eb783a6691b3333.png",
+    "static/media/react.png": "/AbdullahMatinPortfolio/static/media/react.e82fea9fc5b7565e2519.png",
+    "static/media/node.png": "/AbdullahMatinPortfolio/static/media/node.c9213b5680646f8310e3.png",
+    "static/media/php.png": "/AbdullahMatinPortfolio/static/media/php.18ffaa83e6890cea3351.png",
+    "index.html": "/AbdullahMatinPortfolio/index.html",
+    "main.5dfc606b.css.map": "/AbdullahMatinPortfolio/static/css/main.5dfc606b.css.map",
+    "main.d442b82b.js.map": "/AbdullahMatinPortfolio/static/js/main.d442b82b.js.map",
+    "453.1407b060.chunk.js.map": "/AbdullahMatinPortfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5dfc606b.css",
+    "static/js/main.d442b82b.js"
+  ]
+}
